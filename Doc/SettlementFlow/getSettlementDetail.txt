@@ -1,0 +1,54 @@
+
+
+**简要描述：**
+
+- 获取结算流水单详情
+
+** 开发人员**
+
+- 王阁
+
+
+
+**请求URL：**
+- ` /SettlementFlow/getSettlementDetail`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|storeId |是  |int |storeId   |
+
+|settlementNo |是  |string |settlementNo  |
+
+
+ **返回示例**
+
+```
+${res2}
+```
+
+ **返回参数说明**
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+%for k,item in res['data']['rows'][0].items():
+|${k} |${type(item).__name__}   |  |
+    %if type(item).__name__ == 'list':
+        %for kk,vv in item[0].items():
+            %if type(vv).__name__ == 'list':
+                %for kkk,vvv in vv[0].items():
+                    |${kk}.${kkk} |${type(kkk).__name__}   |
+                %endfor
+            %endif
+        |${k}.${kk} |${type(kk).__name__}   |  |
+        %endfor
+    %endif
+%endfor
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+

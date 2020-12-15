@@ -1,0 +1,53 @@
+**简要描述：**
+
+- 结算单流水分页列表
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` SettlementFlow/List`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|payment_channel|false|string|结算渠道|
+|store_id|false|int|门店id|
+|create_time_start|false|string|结算单生成时间-开始|
+|create_time_end|false|string|结算生成时间-结束|
+|payment_time_start|false|string|结算完成时间-开始|
+|payment_time_end|false|string|结算完成时间-结束|
+|payment_no|false|string|流水号|
+|settlement_no|false|string|结算单号|
+|page_no |否  |int | 页码  默认1  |
+|page_size     |否  |int | 每页条数 默认10   |
+
+ **返回示例**
+
+```
+ ${res2}
+}
+```
+
+**返回参数说明**
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+%for k,item in res['data'][0].items():
+|${k} |${type(item).__name__}   |  |
+    %if type(item).__name__ == 'list':
+        %for kk,vv in item[0].items():
+    |${k}.${kk} |${type(kk).__name__}   |  |
+        %endfor
+    %endif
+%endfor
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+

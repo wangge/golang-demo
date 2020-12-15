@@ -1,0 +1,57 @@
+**简要描述：**
+
+- {{.Table}}分页列表
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` {{.Name}}/List`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|name |否  |string |{{.Table}}名称   |
+|page_no |否  |int | 页码  默认1  |
+|page_size     |否  |int | 每页条数 默认10   |
+
+ **返回示例**
+
+```
+ {
+    "code": "1",
+    "action": "toast",
+    "message": "数据获取成功",
+    "data": {
+        "rows": [
+        {
+        {{range .Fd}}
+          "{{.FieldName}}": " ",{{end}}
+        }
+        ],
+        "rowCount": 30,
+        "rowsPerPage": 10,
+        "pageIndex": 0,
+        "pageNumber": 1,
+        "pageCount": 3
+    },
+    "popup_windows": []
+}
+```
+
+ **返回参数说明**
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+{{range .Fd}}|{{.FieldName}} |{{.DataType}}   |{{.FieldDesc}}  |
+{{end}}
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+

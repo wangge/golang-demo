@@ -1,0 +1,46 @@
+**简要描述：**
+
+- {{.Table}}分页列表
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` {{.Name}}/List`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |{{range .Search}}
+|{{.SName}}|{{.SMust}}|{{.SType}}|{{.SDes}}|{{end}}
+|page_no |否  |int | 页码  默认1  |
+|page_size     |否  |int | 每页条数 默认10   |
+
+ **返回示例**
+
+```
+ ${res2}
+}
+```
+
+**返回参数说明**
+
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+%for k,item in res['data'][0].items():
+|${k} |${type(item).__name__}   |  |
+    %if type(item).__name__ == 'list':
+        %for kk,vv in item[0].items():
+    |${k}.${kk} |${type(kk).__name__}   |  |
+        %endfor
+    %endif
+%endfor
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+
