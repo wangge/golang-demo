@@ -1,9 +1,10 @@
 <?php
+{{if .NameSpace}}
+namespace {{.NameSpace}}; {{end}}
 /**
  * {{.ClassDesc}}
  */
-{{if .NameSpace}}
-namespace {{.NameSpace}} {{end}}
+
 class {{.ClassName}} extends {{.ClassParent}}
 {
     {{if .ServiceName}}protected static $className = '{{.ServiceName}}';{{end}}
