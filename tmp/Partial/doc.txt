@@ -1,0 +1,44 @@
+**简要描述：**
+
+- {{.Des}}
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` {{.Class}}/{{.Name}}`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |{{range .Param}}{{if eq .Type "array"}}{{range .Array}}
+|{{.Name}} |{{.Required}}  |{{.Type}} |{{.Desc}}   |{{end}}{{else}}
+|{{.Name}} |{{.Required}}  |{{.Type}} |{{.Desc}}   |{{end}}{{end}}
+ **返回示例**
+
+```
+${res2}
+```
+ **返回参数说明**
+%if hasattr(res['data'], "__iter__"):
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+    %if "rows" in res['data']:
+        %for k,item in res['data']['rows'][0].items():
+|${k} |string   |  |
+        %endfor
+    %else:
+        %for k,item in res['data'].items():
+|${k} |string   |  |
+        %endfor
+    %endif
+%endif
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+

@@ -1,48 +1,47 @@
 package main
 
 import (
-	"fmt"
 	"wangge/wg"
 )
 
 func main()  {
 	controllerDir := "Operation"
-	parent := "Business"
-	name := "Business"
-	des := "业务申请记录"
+	parent := "UserGasCard"
+	name := "UserGasCard"
+	des := "气表绑定记录"
 	service := "Operation"
-	tableName := "business"
-	fields := wg.FieldInfos2("zk_local_toc_main", tableName)
-	fmt.Println(fields)
+	//tableName := "user_gas_card"
+	//fields := wg.FieldInfos2("zk_local_toc_main", tableName)
+	//fmt.Println(fields)
 	fucs := []wg.FunTp{
+	//{
+	//	Name: "syncBusiness",
+	//	Des: "重新推送业务",
+	//	Param: []wg.PostParam{
+	//		{"id","int","业务id",true,"0",[]wg.ArrayParams{}},
+	//	},
+	//	PK: "",
+	//	Void: false,
+	//	Class: name,
+	//	Parent: parent,
+	//	Service: service,
+	//},
 	{
-		Name: "syncBusiness",
-		Des: "重新推送业务",
-		Param: []wg.PostParam{
-			{"id","int","业务id",true,"0",[]wg.ArrayParams{}},
-		},
-		PK: "",
-		Void: false,
-		Class: name,
-		Parent: parent,
-		Service: service,
-	},
-	{
-		Name: "businessList",
-		Des: "有卡申请",
+		Name: "List",
+		Des: "气表绑定记录",
 		Param: []wg.PostParam{
 			{"searchParam","array","过滤条件",true, "",[]wg.ArrayParams{
-				{"partner_id","int","燃气公司id",false,"0"},
-				{"business_type_id","int","业务类型id",false,"0"},
-				{"id","int","申请单号",false,"0"},
-				{"charge_no","string","缴费号",false,""},
-				{"mobile","string","申请人手机",false,""},
-				{"user_mobile","string","申请人账号手机",false,""},
-				{"create_time_start","date","申请时间开始",false,""},
-				{"create_time_end","date","申请时间结算",false,""},
-				{"status","int","业务状态0-待审核，1-审核不通过，2-审核通过，5-业务终止，9-已完成",false,""},
-				{"sync_status","int","推送状态4001-推送成功，4003-推送失败",false,""},
-				{"bill_status","int","是否有缴费1-有,0-无",false,"-1"},
+
+				{"partner_id","int","公司id",false,""},
+				{"card_no","string","缴费号",false,""},
+				//{"meter_no","string","表具号",false,""},
+				//{"outer_card_no","string","第三方缴费号",false,""},
+				{"mobile","string","手机号",false,""},
+				//{"idcard_no","string","身份证号",false,""},
+				{"relation","int","户主关系,1-亲戚，2-户主，3-房东，4-朋友，5-其他，11-夫妻，12-父母，13-兄弟姐妹",false,""},
+				{"create_time_start","date","注册时间开始",false,""},
+				{"create_time_end","date","注册时间结算",false,""},
+
 			}},
 			{"page_no","int","页码",false,"1",[]wg.ArrayParams{}},
 			{"page_size","int","每页显示条数",false,"10",[]wg.ArrayParams{}},
@@ -53,31 +52,31 @@ func main()  {
 		Parent: parent,
 		Service: service,
 	},
-	{
-		Name: "businessNoCardList",
-		Des: "无卡预约",
-		Param: []wg.PostParam{
-			{"searchParam","array","过滤条件",true, "",[]wg.ArrayParams{
-				{"partner_id","int","燃气公司id",false,"0"},
-				{"business_type_id","int","业务类型id",false,"0"},
-				{"id","int","申请单号",false,"0"},
-				{"charge_no","string","缴费号",false,""},
-				{"mobile","string","申请人手机",false,""},
-				{"user_mobile","string","申请人账号手机",false,""},
-				{"create_time_start","date","申请时间开始",false,""},
-				{"create_time_end","date","申请时间结算",false,""},
-				{"status","int","业务状态0-待审核，1-审核不通过，2-审核通过，5-业务终止，9-已完成",false,""},
-				{"sync_status","int","推送状态4001-推送成功，4003-推送失败",false,""},
-			}},
-			{"page_no","int","页码",false,"1",[]wg.ArrayParams{}},
-			{"page_size","int","每页显示条数",false,"10",[]wg.ArrayParams{}},
-		},
-		PK: "",
-		Void: false,
-		Class: name,
-		Parent: parent,
-		Service: service,
-	},
+	//{
+	//	Name: "businessNoCardList",
+	//	Des: "无卡预约",
+	//	Param: []wg.PostParam{
+	//		{"searchParam","array","过滤条件",true, "",[]wg.ArrayParams{
+	//			{"partner_id","int","燃气公司id",false,"0"},
+	//			{"business_type_id","int","业务类型id",false,"0"},
+	//			{"id","int","申请单号",false,"0"},
+	//			{"charge_no","string","缴费号",false,""},
+	//			{"mobile","string","申请人手机",false,""},
+	//			{"user_mobile","string","申请人账号手机",false,""},
+	//			{"create_time_start","date","申请时间开始",false,""},
+	//			{"create_time_end","date","申请时间结算",false,""},
+	//			{"status","int","业务状态0-待审核，1-审核不通过，2-审核通过，5-业务终止，9-已完成",false,""},
+	//			{"sync_status","int","推送状态4001-推送成功，4003-推送失败",false,""},
+	//		}},
+	//		{"page_no","int","页码",false,"1",[]wg.ArrayParams{}},
+	//		{"page_size","int","每页显示条数",false,"10",[]wg.ArrayParams{}},
+	//	},
+	//	PK: "",
+	//	Void: false,
+	//	Class: name,
+	//	Parent: parent,
+	//	Service: service,
+	//},
 	//{
 	//	Name: "update",
 	//	Des: "统计",

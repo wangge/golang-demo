@@ -1,11 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main()  {
-	fmt.Println(reverse(123))
-	fmt.Println(reverse(4541))
-	fmt.Println(reverse(250))
+	//fmt.Println(reverse(123))
+	//fmt.Println(reverse(4541))
+	//fmt.Println(reverse(250))
+	s:=[]int{10,20,5}
+	d:=[]int{5,5,2}
+	fmt.Println(breakfastNumber(s,d,15))
 
 }
 func reverse(x int) int {
@@ -19,4 +25,31 @@ func reverse(x int) int {
 		x = x/10
 	}
 	return rev
+}
+func listSum(a []int) int {
+	t := 0
+	for _,i := range a{
+		t +=i
+	}
+	return t
+}
+
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	sort.Ints(staple)
+	sort.Ints(drinks)
+
+	l1 := len(staple)
+	l2 := len(drinks)
+	i:=0
+	j:= l2-1
+	r:=0
+	for i<l1 && j>=0{
+		if staple[i]+drinks[j] <=x{
+			r+=j+1
+			i=i+1
+		}else{
+			j=j-1
+		}
+	}
+	return r%1000000007
 }

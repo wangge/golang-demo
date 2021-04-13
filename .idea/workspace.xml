@@ -20,25 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bf7ba0a-7f36-45eb-bd02-12dec3638677" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PHP/php2go.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP/test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leecode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Btree.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/letou.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/millionWork.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mutexDemo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rwMutexDemo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doc/SettlementFlow/FillSettlement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doc/SettlementFlow/SettlementChannel.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doc/SettlementFlow/getSettlementDetail.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doc/SettlementFlow/list.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operation/Api/Controller/Base/SettlementFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operation/Api/Module/SettlementFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operation/Api/Service/Operation/SettlementFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operation/Service/Handle/Order/SettlementFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Operation/Service/Module/Order/SettlementFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/Partial/classTp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/Partial/classTp.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/Partial/controller_controller.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/Partial/controller_controller.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/Partial/controller_module.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/Partial/controller_module.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/Partial/service_handle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/Partial/service_handle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/Partial/service_module.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/Partial/service_module.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateTemplateFiles.go" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateTemplateFiles.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leecode.go" beforeDir="false" afterPath="$PROJECT_DIR$/leecode.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/operationControllerDemo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +45,14 @@
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -89,12 +87,12 @@
       <recent name="C:\Go\src\wangge\template\Sevice" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build lottery.go">
-    <configuration name="go build channelDemo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build millionWork.go">
+    <configuration name="go build Btree.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wangge" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/channelDemo.go" />
+      <filePath value="$PROJECT_DIR$/Btree.go" />
       <package value="wangge" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
@@ -108,40 +106,40 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build leecode.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build letou.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wangge" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/leecode.go" />
+      <filePath value="$PROJECT_DIR$/letou.go" />
       <package value="wangge" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build lottery.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build millionWork.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wangge" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/lottery.go" />
+      <filePath value="$PROJECT_DIR$/millionWork.go" />
       <package value="wangge" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build test.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build operationControllerDemo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="wangge" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/test.go" />
+      <filePath value="$PROJECT_DIR$/operationControllerDemo.go" />
       <package value="wangge" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build lottery.go" />
+        <item itemvalue="Go Build.go build millionWork.go" />
         <item itemvalue="Go Build.go build demo.go" />
-        <item itemvalue="Go Build.go build test.go" />
-        <item itemvalue="Go Build.go build leecode.go" />
-        <item itemvalue="Go Build.go build channelDemo.go" />
+        <item itemvalue="Go Build.go build letou.go" />
+        <item itemvalue="Go Build.go build operationControllerDemo.go" />
+        <item itemvalue="Go Build.go build Btree.go" />
       </list>
     </recent_temporary>
   </component>

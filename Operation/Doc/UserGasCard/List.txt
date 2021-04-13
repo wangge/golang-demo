@@ -1,0 +1,50 @@
+**简要描述：**
+
+- 气表绑定记录
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` UserGasCard/List`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|partner_id |false  |int |公司id   |
+|card_no |false  |string |缴费号   |
+|mobile |false  |string |手机号   |
+|relation |false  |int |户主关系,1-亲戚，2-户主，3-房东，4-朋友，5-其他，11-夫妻，12-父母，13-兄弟姐妹   |
+|create_time_start |false  |date |注册时间开始   |
+|create_time_end |false  |date |注册时间结算   |
+|page_no |false  |int |页码   |
+|page_size |false  |int |每页显示条数   |
+ **返回示例**
+
+```
+${res2}
+```
+ **返回参数说明**
+%if hasattr(res['data'], "__iter__"):
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+    %if "rows" in res['data']:
+        %for k,item in res['data']['rows'][0].items():
+|${k} |string   |  |
+        %endfor
+    %else:
+        %for k,item in res['data'].items():
+|${k} |string   |  |
+        %endfor
+    %endif
+%endif
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+

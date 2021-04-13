@@ -55,10 +55,10 @@ func main()  {
 	workspace := "C:\\workspace\\Operation/"
 	workspace = "Operation/"
 	tmpPre := "tmp3"
-	name := "settlementFlow"
-	parent := "Financial"
-	tableInfo := "结算单流水"
-	tableName := "settlement"
+	name := "user"
+	parent := "User"
+	tableInfo := "用户列表"
+	tableName := "user"
 	fields := wg.FieldInfos("zk_local_toc_main", tableName)
 	
 	pe := Perm{
@@ -66,30 +66,25 @@ func main()  {
 		Edit:false,
 		Delete:false,
 		List:true,
-		Export:true,
+		Export:false,
 		Online:false,
 		Offline:false,
 		Audit: false,
 		Detail: false,
 	}
 	searchp := []SearchParmers{
-		{"payment_channel","string",false,"结算渠道"},
-		{"store_id","int",false,"门店id"},
-		{"create_time_start","string",false,"结算单生成时间-开始"},
-		{"create_time_end","string",false,"结算生成时间-结束"},
-		{"payment_time_start","string",false,"结算完成时间-开始"},
-		{"payment_time_end","string",false,"结算完成时间-结束"},
-		{"payment_no","string",false,"流水号"},
-		{"settlement_no","string",false,"结算单号"},
+		{"mobile","string",false,"手机号"},
+		{"create_time_start","string",false,"注册时间-开始时间"},
+		{"create_time_end","string",false,"注册时间-结束时间"},
 	}
 	var searchkey []string
 	for _,s := range searchp{
 		searchkey = append(searchkey, s.SName)
 	}
 	functions := []Fuc{
-		{"FillSettlement",[]string{"settlementNo","paymentChannel","paymentNo"},"完成划账", true, true, "storeId"},
-		{"SettlementChannel",[]string{},"划账渠道", false, false,""},
-		{"getSettlementDetail",[]string{"settlementNo"},"获取结算流水单详情", true, true,"storeId"},
+		//{"FillSettlement",[]string{"settlementNo","paymentChannel","paymentNo"},"完成划账", true, true, "storeId"},
+		//{"SettlementChannel",[]string{},"划账渠道", false, false,""},
+		//{"getSettlementDetail",[]string{"settlementNo"},"获取结算流水单详情", true, true,"storeId"},
 	}
 	r := TData{
 		Table: tableInfo,
