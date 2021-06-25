@@ -6,9 +6,9 @@ import (
 
 func main()  {
 	controllerDir := "Operation"
-	parent := "UserGasCard"
-	name := "UserGasCard"
-	des := "气表绑定记录"
+	parent := "Refund"
+	name := "PaymentOrderRefund"
+	des := "退款记录"
 	service := "Operation"
 	//tableName := "user_gas_card"
 	//fields := wg.FieldInfos2("zk_local_toc_main", tableName)
@@ -28,20 +28,27 @@ func main()  {
 	//},
 	{
 		Name: "List",
-		Des: "气表绑定记录",
+		Des: "退款记录",
 		Param: []wg.PostParam{
 			{"searchParam","array","过滤条件",true, "",[]wg.ArrayParams{
 
 				{"partner_id","int","公司id",false,""},
+				{"order_sn","string","订单号",false,""},
+				{"trade_no","string","支付单号",false,""},
 				{"card_no","string","缴费号",false,""},
-				//{"meter_no","string","表具号",false,""},
-				//{"outer_card_no","string","第三方缴费号",false,""},
-				{"mobile","string","手机号",false,""},
-				//{"idcard_no","string","身份证号",false,""},
-				{"relation","int","户主关系,1-亲戚，2-户主，3-房东，4-朋友，5-其他，11-夫妻，12-父母，13-兄弟姐妹",false,""},
-				{"create_time_start","date","注册时间开始",false,""},
-				{"create_time_end","date","注册时间结算",false,""},
-
+				{"meter_no","string","表具号",false,""},
+				{"source","string","表具号",false,"充值渠道，小程序(huixiang_plus_applet)、终端机(arm_terminal)、APP(huixiang_plus_app)"},
+				{"payment_method","string","表具号",false,"支付方式，用于区分不同渠道不同类型的支付,支付宝(Alipay)、微信(Weixin),四川农商(SCRural)"},
+				{"payment_time_start","date","支付时间开始",false,""},
+				{"payment_time_end","date","支付时间结束",false,""},
+				{"refund_time_start","date","退款发起时间开始",false,""},
+				{"refund_time_end","date","退款发起时间结束",false,""},
+				{"complete_time_start","date","退款完成时间开始",false,""},
+				{"complete_time_end","date","退款完成时间结束",false,""},
+				{"outer_card_no","string","第三方缴费号",false,""},
+				{"nickname","string","付款人",false,""},
+				{"mobile","string","付款人手机号",false,""},
+				{"category","string","对接系统1-营收,3-金卡",false,""},
 			}},
 			{"page_no","int","页码",false,"1",[]wg.ArrayParams{}},
 			{"page_size","int","每页显示条数",false,"10",[]wg.ArrayParams{}},
