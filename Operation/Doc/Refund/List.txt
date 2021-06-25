@@ -1,0 +1,61 @@
+**简要描述：**
+
+- 退款记录
+
+**开发人员**
+
+- 王阁
+
+**请求URL：**
+- ` PaymentOrderRefund/List`
+
+**请求方式：**
+- POST
+
+**参数：**
+
+|参数名|必选|类型|说明|
+|:----    |:---|:----- |-----   |
+|partner_id |false  |int |公司id   |
+|order_sn |false  |string |订单号   |
+|trade_no |false  |string |支付单号   |
+|card_no |false  |string |缴费号   |
+|meter_no |false  |string |表具号   |
+|source |false  |string |表具号   |
+|payment_method |false  |string |表具号   |
+|payment_time_start |false  |date |支付时间开始   |
+|payment_time_end |false  |date |支付时间结束   |
+|refund_time_start |false  |date |退款发起时间开始   |
+|refund_time_end |false  |date |退款发起时间结束   |
+|complete_time_start |false  |date |退款完成时间开始   |
+|complete_time_end |false  |date |退款完成时间结束   |
+|outer_card_no |false  |string |第三方缴费号   |
+|nickname |false  |string |付款人   |
+|mobile |false  |string |付款人手机号   |
+|category |false  |string |对接系统1-营收,3-金卡   |
+|page_no |false  |int |页码   |
+|page_size |false  |int |每页显示条数   |
+ **返回示例**
+
+```
+${res2}
+```
+ **返回参数说明**
+%if hasattr(res['data'], "__iter__"):
+|参数名|类型|说明|
+|:-----  |:-----|-----                           |
+    %if "rows" in res['data']:
+        %for k,item in res['data']['rows'][0].items():
+|${k} |string   |  |
+        %endfor
+    %else:
+        %for k,item in res['data'].items():
+|${k} |string   |  |
+        %endfor
+    %endif
+%endif
+ **备注**
+
+- 更多返回错误代码请看首页的错误代码描述
+
+
